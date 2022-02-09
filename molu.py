@@ -21,16 +21,16 @@ class MoluLang:
         if(NoPlusLine == False):self.line +=1
         code_sp = code.split(' ')
     
-        if ('저기' in code): #조건문
+        if ('ㅁ?ㄹ' in code): #조건문
             var1 = code_sp[0]
             var2 = code_sp[1]
 
-            if('갸아아악 저기' in code):
+            if('갸아아악 ㅁ?ㄹ' in code):
                 if(MoluLang.variable.valuize(var1)[0] != MoluLang.variable.valuize(var2)[0]):
-                    self.linecompile(code[code.find('저기')+3:], True)
+                    self.linecompile(code[code.find('ㅁ?ㄹ')+3:], True)
             else:
                 if(MoluLang.variable.valuize(var1)[0] == MoluLang.variable.valuize(var2)[0]):
-                    self.linecompile(code[code.find('저기')+3:], True)
+                    self.linecompile(code[code.find('ㅁ?ㄹ')+3:], True)
         elif('츄릅' in code): #값 더하기
             if(code_sp[0] in MoluLang.variable.diction):
                 MoluLang.variable.diction[code_sp[0]].value += MoluLang.variable.valuize(code_sp[2])[0]
